@@ -49,10 +49,7 @@ function loadSection(section) {
 // ---------------------------
 // FUNGSI: Menampilkan profil anggota dari members.js
 // ---------------------------
-
 function loadProfiles() {
-  dashboard.innerHTML = `<h2>Memuat data anggota...</h2>`;
-
   try {
     // Data diambil langsung dari variabel global `membersData`
     const members = membersData;
@@ -82,7 +79,7 @@ function loadProfiles() {
 
     // Tambahkan grid ke dashboard
     section.appendChild(grid);
-    dashboard.innerHTML = ''; // Hapus teks "Memuat..."
+    dashboard.innerHTML = ''; 
     dashboard.appendChild(section);
   } catch (error) {
     dashboard.innerHTML = `<p style="color:red;">Gagal memuat data anggota.</p>`;
