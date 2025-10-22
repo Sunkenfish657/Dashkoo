@@ -50,6 +50,8 @@ function loadSection(section) {
 // FUNGSI: Menampilkan profil anggota dari members.js
 // ---------------------------
 
+function loadProfiles() {
+
   try {
     // Data diambil langsung dari variabel global `membersData`
     const members = membersData;
