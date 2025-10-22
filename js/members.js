@@ -3,7 +3,7 @@ const membersData = [
   {
     name: "Brian Juli Akbar",
     role: "Koordinator & Dokumentator",
-    bio: "Suka membuat dokumentasi dan membangun struktur proyek."
+    bio: "Suka membuat dokumentasi dan membangun struktur proyek. Belajar Cybersecurity dan Digital Forensik"
   },
   {
     name: "Nadia Mega Utami",
@@ -17,7 +17,7 @@ const membersData = [
   },
   {
     name: "Rizal Tri Mukti",
-    role: "UI/UX Designer",
-    bio: "Mendesain tampilan dan pengalaman pengguna Dashkoo."
+    role: "Data Analysis",
+    bio: "Menganalisis data?"
   }
 ];
