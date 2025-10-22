@@ -51,7 +51,7 @@ function loadSection(section) {
 function loadProfiles() {
   dashboard.innerHTML = `<h2>Memuat data anggota...</h2>`;
 
-  fetch('data/members.json')
+  fetch('/data/members.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('Gagal memuat members.json');
