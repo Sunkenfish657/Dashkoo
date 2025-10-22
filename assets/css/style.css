@@ -1,1 +1,158 @@
+/* ---------------------------
+   DASHKOO MAIN STYLE
+   Struktur: Mirip layout forum seperti 4chan
+   --------------------------- */
 
+/* Reset gaya dasar browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tampilan umum halaman */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background-color: #f0f0f0;
+  color: #111;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ---------------------------
+   HEADER
+   --------------------------- */
+header {
+  width: 100%;
+  background-color: #eee;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+/* ---------------------------
+   MENU NAVIGASI
+   --------------------------- */
+#menu {
+  margin-top: 8px;
+}
+
+#menu button {
+  background: #ddd;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+#menu button:hover {
+  background: #ccc;
+}
+
+/* ---------------------------
+   DASHBOARD UTAMA
+   --------------------------- */
+#dashboard {
+  width: 90%;
+  max-width: 900px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+/* ---------------------------
+   BAGIAN HOME
+   --------------------------- */
+#home h2 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+#home p {
+  color: #555;
+}
+
+/* ---------------------------
+   BAGIAN PROFIL ANGGOTA
+   --------------------------- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.card .bio {
+  font-style: italic;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #666;
+}
+
+/* ---------------------------
+   PROJEK
+   --------------------------- */
+#projects h2 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+#projects p {
+  color: #555;
+}
+
+/* ---------------------------
+   FOOTER
+   --------------------------- */
+footer {
+  margin-top: auto;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: #777;
+  text-align: center;
+}
