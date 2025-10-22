@@ -51,6 +51,7 @@ function loadSection(section) {
 // ---------------------------
 
 function loadProfiles() {
+  dashboard.innerHTML = `<h2>Memuat data anggota...</h2>`;
 
   try {
     // Data diambil langsung dari variabel global `membersData`
