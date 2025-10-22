@@ -6,17 +6,17 @@ const membersData = [
     bio: "Suka membuat dokumentasi dan membangun struktur proyek."
   },
   {
-    name: "Nadya",
+    name: "Nadia Mega Utami",
     role: "Pengembang Python & Machine Learning",
     bio: "Berfokus pada pemahaman AI dan implementasi awal ML."
   },
   {
-    name: "Napis",
+    name: "Navys",
     role: "Front-end Learner",
     bio: "Belajar HTML dan CSS untuk membangun tampilan website."
   },
   {
-    name: "Rizal",
+    name: "Rizal Tri Mukti",
     role: "UI/UX Designer",
     bio: "Mendesain tampilan dan pengalaman pengguna Dashkoo."
   }
