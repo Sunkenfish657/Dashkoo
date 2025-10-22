@@ -1,20 +1,20 @@
-
 // ---------------------------
 // DASHKOO MAIN SCRIPT
 // ---------------------------
 
-// Ambil elemen penting
+// Ambil elemen penting dari HTML
 const menuButtons = document.querySelectorAll('#menu button');
 const dashboard = document.getElementById('dashboard');
 
-// Fungsi untuk mengganti isi dashboard
+// ---------------------------
+// FUNGSI: Mengganti isi dashboard sesuai menu
+// ---------------------------
 function loadSection(section) {
-  // Kosongkan dashboard dulu
-  dashboard.innerHTML = '';
+  dashboard.innerHTML = ''; // Kosongkan isi dashboard
 
-  // Pilih konten berdasarkan menu
   switch (section) {
     case 'home':
+      // Teks sambutan di halaman utama
       dashboard.innerHTML = `
         <section id="home" class="active">
           <h2>Selamat Datang di Dashkoo</h2>
@@ -27,10 +27,11 @@ function loadSection(section) {
       break;
 
     case 'profile':
-      loadProfiles(); // fungsi terpisah untuk ambil data anggota
+      loadProfiles(); // Panggil fungsi khusus untuk memuat profil
       break;
 
     case 'projects':
+      // Placeholder sementara untuk proyek
       dashboard.innerHTML = `
         <section id="projects">
           <h2>Proyek Dashkoo</h2>
@@ -46,61 +47,59 @@ function loadSection(section) {
 }
 
 // ---------------------------
-// FUNGSI: memuat data anggota dari members.json
+// FUNGSI: Menampilkan profil anggota dari members.js
 // ---------------------------
 function loadProfiles() {
   dashboard.innerHTML = `<h2>Memuat data anggota...</h2>`;
 
-  fetch('https://Sunkenfish657.github.io/Dashkoo/data/members.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Gagal memuat members.json');
-      }
-      return response.json();
-    })
-    .then(members => {
-      // Buat elemen container untuk daftar anggota
-      const section = document.createElement('section');
-      section.id = 'profile';
-      section.innerHTML = `<h2>Profil Anggota Tim</h2>`;
+  try {
+    // Data diambil langsung dari variabel global `membersData`
+    const members = membersData;
 
-      // Buat wadah grid
-      const grid = document.createElement('div');
-      grid.classList.add('profile-grid');
+    // Buat kontainer utama profil
+    const section = document.createElement('section');
+    section.id = 'profile';
+    section.innerHTML = `<h2>Profil Anggota Tim</h2>`;
 
-      // Loop semua anggota dari JSON
-      members.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('card');
+    // Buat wadah berbentuk grid
+    const grid = document.createElement('div');
+    grid.classList.add('profile-grid');
 
-        // Isi tiap kartu anggota
-        card.innerHTML = `
-          <h3>${member.name}</h3>
-          <p>${member.role}</p>
-          ${member.bio ? `<p class="bio">${member.bio}</p>` : ''}
-        `;
+    // Buat kartu untuk setiap anggota
+    members.forEach(member => {
+      const card = document.createElement('div');
+      card.classList.add('card');
 
-        grid.appendChild(card);
-      });
+      card.innerHTML = `
+        <h3>${member.name}</h3>
+        <p>${member.role}</p>
+        ${member.bio ? `<p class="bio">${member.bio}</p>` : ''}
+      `;
 
-      section.appendChild(grid);
-      dashboard.innerHTML = ''; // Hapus teks "Memuat..."
-      dashboard.appendChild(section);
-    })
-    .catch(error => {
-      dashboard.innerHTML = `<p style="color:red;">${error.message}</p>`;
+      grid.appendChild(card);
     });
+
+    // Tambahkan grid ke dashboard
+    section.appendChild(grid);
+    dashboard.innerHTML = ''; // Hapus teks "Memuat..."
+    dashboard.appendChild(section);
+  } catch (error) {
+    dashboard.innerHTML = `<p style="color:red;">Gagal memuat data anggota.</p>`;
+    console.error('Error loading profiles:', error);
+  }
 }
 
 // ---------------------------
-// Event listener menu
+// EVENT LISTENER MENU
 // ---------------------------
-menuButtons.forEach((btn) => {
+menuButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const section = btn.getAttribute('data-section');
     loadSection(section);
   });
 });
 
-// Tampilkan halaman Home saat pertama kali dibuka
+// ---------------------------
+// Jalankan halaman Home saat pertama kali dibuka
+// ---------------------------
 loadSection('home');
