@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashkoo — Portofolio Tim</title>
 
+  <!-- Gaya utama -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Project-Dashkoo</h1>
+    <p>Belajar bersama sambil membangun proyek nyata</p>
+
+    <!-- Navigasi: tombol menu yang akan mengubah isi dashboard -->
+    <nav id="menu">
+      <!-- data-section digunakan JS untuk tahu konten mana yang dimuat -->
+      <button data-section="home">Home</button>
+      <button data-section="profile">Profile</button>
+      <button data-section="projects">Projects</button>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD: area besar yang isinya bisa berubah -->
+  <main id="dashboard">
+    <section id="home" class="active">
+      <h2>Selamat Datang di Dashkoo</h2>
+      <p>
+        Ini adalah website portofolio tim pemula yang belajar HTML, CSS, dan JavaScript
+        lewat praktek langsung. Klik menu di atas untuk melihat bagian lain!
+      </p>
+    </section>
+
+    <!-- Konten lain akan dimasukkan lewat JavaScript -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year">2025</span> Dashkoo Team</p>
+  </footer>
+
+  <!-- File JS utama -->
+  <script src="js/main.js" defer></script>
+
+  <!-- Tahun otomatis -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
